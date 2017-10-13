@@ -1,5 +1,14 @@
 #recipe Docs
 
+//There is no kill like overkill
+Settings[Keys.DateTimeDisplayCulture] = Settings[Keys.DateTimeInputCulture] =
+    System.Threading.Thread.CurrentThread.CurrentCulture =
+    System.Threading.Thread.CurrentThread.CurrentUICulture =
+    System.Globalization.CultureInfo.DefaultThreadCurrentCulture =
+    System.Globalization.CultureInfo.DefaultThreadCurrentUICulture =
+    System.Globalization.CultureInfo.InvariantCulture;
+
+
 Settings[Keys.Host] = "avaloniaui.net";
 Settings[DocsKeys.Title] = "Avalonia UI Framework";
 
