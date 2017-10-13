@@ -1,0 +1,10 @@
+#recipe Docs
+
+Settings[Keys.Host] = "avaloniaui.net";
+Settings[DocsKeys.Title] = "Avalonia UI Framework";
+
+var glob = "avalonia/src/**/{!.git,!bin,!obj,!packages,!*.Tests,!external,!portable.xaml.github,}/**/*.cs";
+if (System.Environment.GetEnvironmentVariable("SKIP_WYAM_API_GEN") != "1")
+{
+    Settings[DocsKeys.SourceFiles] =  new[]{glob, "../"+glob};
+}

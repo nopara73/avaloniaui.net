@@ -1,0 +1,3 @@
+[submodule "avalonia"]
+	path = avalonia
+	url = git@github.com:AvaloniaUI/Avalonia.git

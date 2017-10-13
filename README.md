@@ -1,0 +1,1 @@
+Download and unpack `https://github.com/Wyamio/Wyam/releases/download/v1.0.0/Wyam-v1.0.0.zip` to `wyam` directory
