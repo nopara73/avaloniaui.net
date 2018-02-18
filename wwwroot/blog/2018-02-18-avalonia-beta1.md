@@ -1,5 +1,5 @@
 Title: Avalonia Beta 1
-Published: 2016-08-06
+Published: 2018-02-18
 Category: Release
 Author: Steven Kirk
 ---
@@ -9,8 +9,6 @@ We’re pleased to announce that Beta 1 of [Avalonia](https://github.com/Avaloni
 Avalonia is a cross platform .NET UI framework inspired by WPF, with XAML, data binding, lookless controls and much more. Avalonia is the only way to bring XAML-based applications to Windows, Mac and Linux.
 
 We've decided that we're now at a stage where we're happy to come out of Alpha and call our current state Beta! People are already creating awesome applications with Avalonia, such as [Avalon Studio](https://github.com/VitalElement/AvalonStudio) - an IDE Avalonia and [Core2D](https://github.com/wieslawsoltes/Core2D) - a data-driven 2D diagram editor, and this represents the first step towards getting the framework production-ready.
-
-That's not to say there's not a lot still left to do - there is, most notably our documentation! Getting started with Avalonia is still difficult due to our lack of documentation and we hope to start putting some more time into documentation moving forward. Anticipating this, we've now got a site up at http://avaloniaui.net/  with s
 
 The easiest way to get started with Avalonia is to install our [Visual Studio plugin](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio) and use the templates we provide there or use our [.NET core templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates). Check out our [samples](https://github.com/AvaloniaUI/Avalonia/tree/master/samples) for some examples of how to get started writing an application.
 
@@ -131,3 +129,28 @@ Here's a curated list of the other interesting features that were introduced in 
 - `#1273` Added AppBuilder methods for logging
 - `#1079` Portablexaml
 
+
+## Breaking changes in this release
+
+We are also now tracking breaking changes at our [wiki page](https://github.com/AvaloniaUI/Avalonia/wiki/Breaking-Changes).
+
+### `DataContextChanging` and `DataContextChanged`
+
+They were replaced by `OnDataContextBeginUpdate` and `OnDataContextEndUpdate`
+
+
+### `Static` and `Type` markup extensions
+
+They were replaced by standard `x:Static` and `x:Type`, add `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` to the root of your XAML file.
+
+### `StyleResource`
+
+`StyleResource` has been replaced by `StaticResource` and `DynamicResource` as in other XAML frameworks. `StaticResource` and `DynamicResource` in Avalonia search both `Control.Resources` _and_ `Style.Resources`.
+
+### Mouse device
+
+`MouseDevice` is no longer available from the global context, you need to obtain one from `TopLevel` (`Window`, `Popup`, etc). Call `GetVisualRoot()` in your control and cast it to `IInputRoot`.
+
+```csharp
+var pos = (_control.GetVisualRoot() as IInputRoot)?.MouseDevice?.Position ?? default(Point);
+```
