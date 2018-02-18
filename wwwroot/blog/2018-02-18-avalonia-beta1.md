@@ -8,7 +8,7 @@ We’re pleased to announce that Beta 1 of [Avalonia](https://github.com/Avaloni
 
 Avalonia is a cross platform .NET UI framework inspired by WPF, with XAML, data binding, lookless controls and much more. Avalonia is the only way to bring XAML-based applications to Windows, Mac and Linux.
 
-We've decided that we're now at a stage where we're happy to come out of Alpha and call our current state Beta! People are already creating awesome applications with Avalonia, such as [Avalon Studio](https://github.com/VitalElement/AvalonStudio) - an IDE Avalonia and [Core2D](https://github.com/wieslawsoltes/Core2D) - a data-driven 2D diagram editor, and this represents the first step towards getting the framework production-ready.
+We've decided that we're now at a stage where we're happy to come out of Alpha and call our current state Beta! People are already creating awesome applications with Avalonia, such as [Avalon Studio](https://github.com/VitalElement/AvalonStudio) - an Avalonia-based IDE for C# and C++ and [Core2D](https://github.com/wieslawsoltes/Core2D) - a data-driven 2D diagram editor, and this represents the first step towards getting the framework production-ready.
 
 The easiest way to get started with Avalonia is to install our [Visual Studio plugin](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio) and use the templates we provide there or use our [.NET core templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates). Check out our [samples](https://github.com/AvaloniaUI/Avalonia/tree/master/samples) for some examples of how to get started writing an application.
 
