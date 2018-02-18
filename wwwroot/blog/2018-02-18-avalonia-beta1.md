@@ -177,4 +177,4 @@ var pos = (_control.GetVisualRoot() as IInputRoot)?.MouseDevice?.Position ?? def
 
 ## Getting started
 
-Follow instructions [here](http://avaloniaui.net/tutorial/gettingstarted.htmlv).
+Follow instructions [here](http://avaloniaui.net/tutorial/gettingstarted).
