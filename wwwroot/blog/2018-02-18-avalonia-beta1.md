@@ -134,6 +134,25 @@ Here's a curated list of the other interesting features that were introduced in 
 
 We are also now tracking breaking changes at our [wiki page](https://github.com/AvaloniaUI/Avalonia/wiki/Breaking-Changes).
 
+### `BuildAvaloniaApp` and previewer.
+
+You now need `BuildAvaloniaApp` static method in the class with your entry point (typically in `Program.cs` or `App.xaml.cs`) which should be called from `Main`:
+
+```csharp
+        static void Main(string[] args)
+        {
+            BuildAvaloniaApp().Start<MainWindow>();
+        }
+
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>()
+                .UsePlatformDetect()
+.LogToDebug();
+
+```
+
+Previewer *won't* be able to work without it.
+
 ### `DataContextChanging` and `DataContextChanged`
 
 They were replaced by `OnDataContextBeginUpdate` and `OnDataContextEndUpdate`
@@ -154,3 +173,8 @@ They were replaced by standard `x:Static` and `x:Type`, add `xmlns:x="http://sch
 ```csharp
 var pos = (_control.GetVisualRoot() as IInputRoot)?.MouseDevice?.Position ?? default(Point);
 ```
+
+
+## Getting started
+
+Follow instructions [here](http://avaloniaui.net/tutorial/gettingstarted.htmlv).
