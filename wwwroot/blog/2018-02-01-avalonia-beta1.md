@@ -37,7 +37,9 @@ The old renderer is still available as the `ImmediateRenderer` class for those f
 
 ## Monomac-based Backend
 
-[#1005](https://github.com/AvaloniaUI/Avalonia/pull/1005) introduced a new Monomac-based backend for Mac OSX platforms. Previously one would use the GTK2 or GTK3 backends on OSX, but now the default is closed to the metal!
+[#1005](https://github.com/AvaloniaUI/Avalonia/pull/1005) introduced a new Monomac-based backend for Mac OSX platforms. 
+The main issue with GTK2/GTK3 backends used previously was the huge set of binaries (~60MB) that needs to be shipped with your app. Another problem with those binaries is that it's complicated to package them into your app bundle.
+Our new backend also makes use of Cocoa window dialogs, which makes your app to look more native.
 
 ## Relative Source Syntax Sugar
 
@@ -76,7 +78,7 @@ Now Avalonia has new syntax to achieve this without the verbosity:
 
 ## Remoting and New Previewer
 
-[#1105](https://github.com/AvaloniaUI/Avalonia/pull/1105) introduced a new previewer architecture which should allow us to make designers for non-windows platforms. The previous previewer used win32 API voodoo to reparent the window of the application into the designer. The new previewer architecture instead uses a TCP transport protocol which communicates between the application and the designer in a platform-independent manner.
+[#1105](https://github.com/AvaloniaUI/Avalonia/pull/1105) introduced a new previewer architecture which should allow us to make designers for non-windows platforms. The previous previewer used win32 API voodoo to reparent the window of the application into the designer. It also used some external executable that would initialize various things via reflection. The whole thing was tied to win32 and full .NET framework, it also made several assumptions about your app. The new previewer architecture instead uses a TCP transport protocol which communicates between the application and the designer in a platform-independent manner. It still has an option to embed the HWND which is used by our Visual Studio extension, but the default one will transfer rendered bitmap data via TCP.
 
 The [AvaloniaVS](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio) extension has already been updated to use this new protocol, and hopefully now designers for other IDEs will be coming soon!
 
@@ -108,12 +110,16 @@ public class ViewModel
 
 [#1244](https://github.com/AvaloniaUI/Avalonia/pull/1244) ported the [Silverlight Calendar](https://github.com/MicrosoftArchive/SilverlightToolkit) control to Avalonia, for all your calendaring needs.
 
+## WPF integration
+
+We've added a seamless integration with WPF: you can embed Avalonia controls in your WPF application without creating extra native windows and with full layout integration which is allowed by the fact that WPF's and Avalonia's layout systems are almost the same. See the demo [here](https://www.youtube.com/watch?v=uFKcO3RxN7k).
+
+
 ## Various Other Features
 
-Here's a curated list of the other interesting features that were introduced in this release. To see everything included in the Beta 2 release, see the [milestone](https://github.com/AvaloniaUI/Avalonia/milestone/2).
+Here's a curated list of the other interesting features that were introduced in this release. To see everything included in the Beta 1 release, see the [milestone](https://github.com/AvaloniaUI/Avalonia/milestone/2).
 
 - `#894` Buttons are disabled when there is a null in the binding chain for Command
-- `#1069` Implementation for Direct2D rendering for WPF integration 
 - `#1085` Added FindAncestor binding mode. 
 - `#1086` Upgrade ReactiveUI to the v8 alpha
 - `#1128` Add a IsPressed property to Button 
