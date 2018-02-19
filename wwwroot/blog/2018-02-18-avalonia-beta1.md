@@ -12,6 +12,8 @@ We've decided that we're now at a stage where we're happy to come out of Alpha a
 
 The easiest way to get started with Avalonia is to install our [Visual Studio plugin](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio) and use the templates we provide there or use our [.NET core templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates). Check out our [samples](https://github.com/AvaloniaUI/Avalonia/tree/master/samples) for some examples of how to get started writing an application.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/21LYHJok82s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 There have been a few architectural changes in this release that we hope will aid us moving forward:
 
 - We are now on the .NET Standard 2.0 platform
@@ -178,3 +180,6 @@ var pos = (_control.GetVisualRoot() as IInputRoot)?.MouseDevice?.Position ?? def
 ## Getting started
 
 Follow instructions [here](/guides/quickstart).
+
+
+<a href="https://www.reddit.com/r/csharp/comments/7yl29q/avaloniaui_beta_1_released_a_crossplatform_xaml/"><img src="//www.redditstatic.com/spreddit5.gif"/>Discuss on Reddit</a>
