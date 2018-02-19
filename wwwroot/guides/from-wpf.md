@@ -6,7 +6,7 @@ are the most common:
 ## Styling
 
 The most obvious difference from other XAML frameworks is that Avalonia uses a
-[CSS-like styling system](../spec/styles.md). Styles aren't stored in a
+[CSS-like styling system](styles.md). Styles aren't stored in a
 `Resources` collection as in WPF, they are stored in a separate `Styles`
 collection:
 
@@ -68,7 +68,7 @@ So to recap:
 ## DependencyProperty
 
 The Avalonia equivalent of `DependencyProperty` is `StyledProperty`, however
-Avalonia [has a richer property system than WPF](../spec/defining-properties.md),
+Avalonia [has a richer property system than WPF](defining-properties.md),
 and includes `DirectProperty` for turning standard CLR properties into Avalonia
 properties. The common base class of `StyledProperty` and `DirectProperty`
 is `AvaloniaProperty`.
@@ -146,7 +146,7 @@ and error-prone](http://stackoverflow.com/questions/23682232).
 
 In Avalonia, there is no `PropertyChangedCallback` at the time of registration,
 instead a class listener is [added to the control's static constructor in much
-the same way that event class listeners are added](../spec/working-with-properties.md#subscribing-to-a-property-on-any-object).
+the same way that event class listeners are added](working-with-properties.md#subscribing-to-a-property-on-any-object).
 
 ## RenderTransforms and RenderTransformOrigin
 
