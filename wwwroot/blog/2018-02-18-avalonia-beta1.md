@@ -69,7 +69,7 @@ Now Avalonia has new syntax to achieve this without the verbosity:
 
 ## Drawings
 
-`Drawing` is a convenient way to create vector icons, used by WPF. The [Visual Studio Image Library](http://vsicons-msdn.azurewebsites.net/) provides many icons as Drawings, and there are other tools that can produce them. They are much more lightweight compared to `Shape` controls since they are not part of the visual tree. 
+`Drawing` is a convenient way to create vector icons, used by WPF. The [Visual Studio Image Library](https://msdn.microsoft.com/en-us/library/windows/desktop/mt791579(v=vs.85).aspx) provides many icons as Drawings, and there are other tools that can produce them. They are much more lightweight compared to `Shape` controls since they are not part of the visual tree. 
 
 [1117](https://github.com/AvaloniaUI/Avalonia/pull/1117) added support for Drawings to Avalonia, though our standard image control still can't display them - in the meantime while we add support for that, drawings can be displayed in a `DrawingPresenter` control.
 

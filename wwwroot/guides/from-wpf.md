@@ -6,7 +6,7 @@ are the most common:
 ## Styling
 
 The most obvious difference from other XAML frameworks is that Avalonia uses a
-[CSS-like styling system](styles.md). Styles aren't stored in a
+[CSS-like styling system](styles). Styles aren't stored in a
 `Resources` collection as in WPF, they are stored in a separate `Styles`
 collection:
 
