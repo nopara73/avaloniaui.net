@@ -7,14 +7,12 @@
         .Where(x => !string.IsNullOrEmpty(x.Item1))
         .OrderBy(x => x.Item1)
         .ToList();
-    var introPage= pages.First(x => x.Item1 == "Intro");
-    pages.Remove(introPage);
+    
     if(Documents[Docs.BlogPosts].Any())
     {
         pages.Insert(0, Tuple.Create("Blog", Context.GetLink(Context.String(DocsKeys.BlogPath))));
     }
 
-    pages.Insert(0, introPage);
     if(Documents[Docs.Api].Any())
     {
         pages.Add(Tuple.Create("API", Context.GetLink("api")));
