@@ -44,7 +44,7 @@ Our new backend also makes use of Cocoa window dialogs, which makes your app to 
 
 ```xml
 <Border Tag="Hello World">
-  <TextBlock Text="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border} AncestorLevel=1}}"/>
+  <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Border} AncestorLevel=1}}"/>
 </Border>
 ```
 
@@ -52,7 +52,7 @@ Now Avalonia has new syntax to achieve this without the verbosity:
 
 ```xml
 <Border Tag="Hello World">
-  <TextBlock Text="{Binding $parent.Text}"/>
+  <TextBlock Text="{Binding $parent.Tag}"/>
 </Border>
 ```
 
