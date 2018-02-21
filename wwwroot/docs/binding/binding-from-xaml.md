@@ -1,4 +1,6 @@
-# Binding from XAML
+Title: Binding from XAML
+Order: 1
+---
 
 Binding from XAML works on the whole the same as in other XAML frameworks: you use the `{Binding}`
 markup extension. Avalonia does have some extra syntacic niceties however. Here's an overview of
