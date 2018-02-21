@@ -18,4 +18,17 @@ static void Main(string[] args)
 
 What this piece of code means is that when the `MainWindow` is created, a new instance of
 `MainWindowViewModel` will be created and assigned to the window's `DataContext` property. From here
-all bindings will by default try to bind to properties on this object.
+all bindings will by default bind to properties on this object.
+
+You can bind child controls to properties on the `DataContext` too, for example:
+
+```xml
+<Window>
+  <Button DataContext="{Binding ChildProperty}">
+</Window>
+```
+
+Will bind the `Button`'s `DataContext` to `Window.DataContext.ChildProperty`.
+
+Some controls automatically bind child controls' data contexts, for example 
+[`ContentControl`](/docs/controls/contentcontrol) and [`ItemsControl`](/docs/controls/itemscontrol).
