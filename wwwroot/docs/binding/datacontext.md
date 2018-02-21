@@ -30,5 +30,8 @@ You can bind child controls to properties on the `DataContext` too, for example:
 
 Will bind the `Button`'s `DataContext` to `Window.DataContext.ChildProperty`.
 
+> Note that when binding to `DataContext`, the `DataContext` of the visual parent is used as the
+source of the binding.
+
 Some controls automatically bind child controls' data contexts, for example 
 [`ContentControl`](/docs/controls/contentcontrol) and [`ItemsControl`](/docs/controls/itemscontrol).
