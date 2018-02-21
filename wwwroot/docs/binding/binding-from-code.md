@@ -52,7 +52,7 @@ Of course the indexer can be used outside object initializers too:
 textBlock2[!TextBlock.TextProperty] = textBlock1[!TextBlock.TextProperty];
 ```
 
-# Transforming binding values
+## Transforming binding values
 
 Because we're working with observables, we can easily transform the values we're binding!
 
@@ -66,7 +66,7 @@ var textBlock = new TextBlock
 };
 ```
 
-# Using XAML bindings from code
+## Using XAML bindings from code
 
 Sometimes when you want the additional features that XAML bindings provide, it's easier to use XAML bindings from code. For example, using only observables you could bind to a property on `DataContext` like this:
 
