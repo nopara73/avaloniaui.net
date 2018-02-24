@@ -86,6 +86,8 @@ set the [`ContentTemplate`](/api/Avalonia.Controls/ContentControl/7AA9343E) prop
 </Window>
 ```
 
+<img class="doc-img" src="images/student-first-last-name.png">
+
 The data template for the window content doesn't only come from the `ContentTemplate` property.
 Every control also has a `DataTemplates` collection into which any number of data templates can
 be placed. If a control doesn't have a template set locally (e.g. in `ContentTemplate`) then it
