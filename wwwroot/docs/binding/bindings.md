@@ -1,5 +1,5 @@
 Title: Bindings
-Order: 1
+Order: 10
 ---
 
 You bind in XAML using the `{Binding}` markup extension. By using bindings (assuming you've

@@ -1,5 +1,5 @@
 Title: Binding in a Control Template
-Order: 5
+Order: 50
 ---
 
 When you're creating a control template and you want to bind to the templated parent you can use:

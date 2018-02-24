@@ -1,5 +1,5 @@
 Title: Binding to Controls
-Order: 2
+Order: 20
 ---
 
 As well as binding to a control's [`DataContext`](datacontext) you can also bind to other

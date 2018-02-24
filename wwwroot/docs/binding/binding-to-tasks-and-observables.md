@@ -1,5 +1,5 @@
 Title: Binding to Tasks and Observables
-Order: 4
+Order: 40
 ---
 
 You can subscribe to the result of a task or an observable by using the `^` stream binding operator.
