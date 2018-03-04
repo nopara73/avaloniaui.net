@@ -1,8 +1,8 @@
 Title: Introduction to XAML
 Order: 20
 ---
-Avalonia uses XAML to define the user-interface using markup. XAML is an XML-based markup language
-that is used by many UI framworks.
+Avalonia uses XAML to define user-interfaces. XAML is an XML-based markup language that is used by
+many UI framworks.
 
 > Note: This section is intended as a basic introduction to using XAML in Avalonia. For more
   information see the 
