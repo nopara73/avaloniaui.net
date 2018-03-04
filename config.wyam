@@ -23,3 +23,8 @@ else
 {
     Console.WriteLine("API generation is DISABLED");
 }
+
+Pipelines["Pages"]
+    .InsertBefore(
+        "WriteMetadata",
+        new Replace("&#64;&#64;", "@"));

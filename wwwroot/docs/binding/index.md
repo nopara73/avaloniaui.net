@@ -7,3 +7,7 @@ on each control each time a value changes.
 
 Binding is often used with the [MVVM Pattern](https://msdn.microsoft.com/en-us/library/hh848246.aspx) and
 for the rest of this guide we'll be assuming that you're using that pattern in your code.
+
+<div>
+  @@Html.Partial("_ChildPages")
+</div>
