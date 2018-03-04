@@ -1,4 +1,5 @@
 Title: Data Templates
+Order: 0
 ---
 Many controls have a `Content` property, such as
 [`ContentControl.Content`](/api/Avalonia.Controls/ContentControl/4B02A756). `Window` inherits from
@@ -127,3 +128,53 @@ Using the `DataTemplates` collection the previous example could be written as:
 Using this mechanism, if you want to reuse a `DataTemplate` everywhere in a `Window` you can
 specify it in `Window.DataTemplates`; if you want the template to be used throughout the whole
 application you can specify it in `App.xaml` in the `Application.DataTemplates` collection.
+
+Now lets add another view model into the mix:
+
+```csharp
+namespace Example
+{
+    public class Teacher
+    {
+        public Teacher(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public string FirstName { get; }
+        public string LastName { get; }
+    }
+}
+```
+
+Now we can add a separate data template for the `Teacher` type and depending on the type of object
+in the `MainWindowViewModel.Content` property, the appropriate view will be displayed:
+
+```xml
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Example">
+  <Window.DataTemplates>
+
+    <DataTemplate DataType="{x:Type local:Student}">
+      <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="0">First Name:</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0">Last Name:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding LastName}"/>
+      </Grid>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type local:Teacher}">
+      <Grid ColumnDefinitions="Auto,4,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="0">Professor</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding LastName}"/>
+      </Grid>
+    </DataTemplate>
+
+  </Window.DataTemplates>
+
+  <ContentControl Content="{Binding Content}"/>
+<Window>
+```

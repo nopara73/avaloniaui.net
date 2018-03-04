@@ -1,7 +1,7 @@
 Title: The DataContext
 Order: 0
 ---
-The [`Control.DataContext`](http://avaloniaui.net/api/Avalonia.Controls/Control/D29AE9A9) property
+The [`Control.DataContext`](/api/Avalonia.Controls/Control/D29AE9A9) property
 describes where controls will look by default for values when binding. The data context will usually
 be set for top-level controls such as [`Window`](http://avaloniaui.net/api/Avalonia.Controls/Window)
 and child controls will inherit this data context.
