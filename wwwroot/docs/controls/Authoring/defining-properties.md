@@ -2,7 +2,7 @@
 
 If you are creating a control, you will want to define properties on your
 control. The process in Avalonia is broadly similar to other XAML languages
-with a few differences - the main one being that Perpsex's equivalent of
+with a few differences - the main one being that Avalonia's equivalent of
 `DependencyProperty` is called `StyledProperty`.
 
 ## Registering Styled Properties

@@ -178,3 +178,10 @@ in the `MainWindowViewModel.Content` property, the appropriate view will be disp
   <ContentControl Content="{Binding Content}"/>
 <Window>
 ```
+
+## Evaluation Order
+
+Data templates in Avalonia can target interfaces and derived classes and so the order of
+DataTemplates can be important: DataTemplates within the same collection are evaluated in
+declaration order so you need to place them from most-specific to least-specific as you woul
+in code.
