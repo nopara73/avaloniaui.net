@@ -6,6 +6,40 @@ Binding from code in Avalonia works somewhat differently to WPF/UWP. At the low 
 binding system is based on Reactive Extensions' `IObservable` which is then built upon by XAML
 bindings (which can also be instantiated in code).
 
+## Subscribing to Changes to a Property
+
+You can subscribe to changes on a property by calling the `GetObservable`
+method. This returns an `IObservable<T>` which can be used to listen for changes
+to the property:
+
+```csharp
+    var textBlock = new TextBlock();
+    var text = textBlock.GetObservable(TextBlock.TextProperty);
+```
+
+Each property that can be subscribed to has a static readonly field called
+`[PropertyName]Property` which is passed to `GetObservable` in order to
+subscribe to the property's changes.
+
+`IObservable` (part of Reactive Extensions, or rx for short) is out of scope
+for this guide, but here's an example which uses the returned observable to
+print a message with the changing property values to the console:
+
+```c#
+    var textBlock = new TextBlock();
+    var text = textBlock.GetObservable(TextBlock.TextProperty);
+    text.Subscribe(value => Console.WriteLine(value + " Changed"));
+```
+
+When the returned observable is subscribed, it will return the current value
+of the property immediately and then push a new value each time the property
+changes. If you don't want the current value, you can use the rx `Skip`
+operator:
+
+```c#
+    var text = textBlock.GetObservable(TextBlock.TextProperty).Skip(1);
+```
+
 ## Binding to an observable
 
 You can bind a property to an observable using the `AvaloniaObject.Bind` method:
@@ -89,4 +123,36 @@ var textBlock = new TextBlock
 {
     [!TextBlock.TextProperty] = new Binding("Name")
 };
+```
+
+## Subscribing to a Property on Any Object
+
+The `GetObservable` method returns an observable that tracks changes to a property on a single
+instance. However, if you're writing a control you may want to implement an `OnPropertyChanged`
+method which isn't tied to an instance of an object.
+
+To do this you can subscribe to 
+[`AvaloniaProperty.Changed`](/api/Avalonia/AvaloniaProperty/65237C52) which is an observable which
+fires _every time the property is changed on any instance_.
+
+> In WPF this is done by passing a static `PropertyChangedCallback` to the `DependencyProperty`
+  registration method, but this only allows the control author to register a property changed
+  callback.
+
+In addition there is an `AddClassHandler` extension method which can automatically route the 
+event to a method on your control.
+
+For example if you want to listen to changes to your control's `Foo` property
+you'd do it like this:
+
+```csharp
+static MyControl()
+{
+    FooProperty.Changed.AddClassHandler<MyControl>(x => x.FooChanged);
+}
+
+private void FooChanged(AvaloniaPropertyChangedEventArgs e)
+{
+    // The 'e' parameter describes what's changed.
+}
 ```
