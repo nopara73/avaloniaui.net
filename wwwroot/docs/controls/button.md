@@ -1,7 +1,6 @@
 Title: Button
 ---
-The [`Button`](/api/Avalonia.Controls/Border/) control is a [`ContentControl`](contentcontrol)
-which reacts to pointer presses.
+The `Button` control is a [`ContentControl`](contentcontrol) which reacts to pointer presses.
 
 A button notifies clicks by raising the [`Click`](/api/Avalonia.Controls/Button/61B1E7A8) event.
 A click is distinct from a `PointerDown` event in that it is raised by default when the button is
