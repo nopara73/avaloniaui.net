@@ -20,11 +20,7 @@ For more information see [the tutorial](https://github.com/grokys/Pizzalonia).
 
 ## .NET Core
 
-First install the Avalonia templates for .NET Core:
-
-```powershell
-dotnet install -i Avalonia.Templates.NetCore
-```
+First install the Avalonia templates for .NET Core by following the instructions [here](https://github.com/AvaloniaUI/avalonia-dotnet-templates).
 
 This will add a couple of project templates to `dotnet`:
 
