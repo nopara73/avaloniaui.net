@@ -21,13 +21,7 @@ Once you have an Avalonia application, two item templates will become available:
 
 ## .NET Core
 
-To install the Avalonia templates for .NET Core you must first clone the template repostory and load the templates into `dotnet new`
-(NuGet packages to do this without cloning the repository coming soon):
-
-```powershell
-git clone https://github.com/AvaloniaUI/avalonia-dotnet-templates
-dotnet install -i [path-to-repository]
-```
+First install the Avalonia templates for .NET Core by following the instructions [here](https://github.com/AvaloniaUI/avalonia-dotnet-templates).
 
 This will add a couple of project templates to `dotnet`:
 
