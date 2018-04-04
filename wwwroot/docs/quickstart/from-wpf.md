@@ -1,4 +1,6 @@
-# Avalonia for WPF Developers
+Title: Avalonia for WPF Developers
+Order: 100
+---
 
 Avalonia is in general very similar to WPF, but you will find differences. Here
 are the most common:
@@ -22,9 +24,9 @@ collection:
 
 ## DataTemplates
 
-As styles aren't stored  in `Resources`, neither are `DataTemplates` ([in fact
-there is no `Resources` collection](#resources)). Instead, `DataTemplates` are
-placed in a `DataTemplates` collection on each control (and on `Application`):
+As styles aren't stored  in `Resources`, neither are `DataTemplates`. Instead, 
+`DataTemplates` are placed in a `DataTemplates` collection on each control
+(and on `Application`):
 
     <UserControl xmlns:viewmodels="clr-namespace:MyApp.ViewModels;assembly=MyApp">
         <UserControl.DataTemplates>
