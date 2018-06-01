@@ -51,7 +51,7 @@ new Style(x => x.OfType<Button>().Class("large"));
 new Style(x => x.OfType<Button>().Class("large").Class(":focus"));
 ```
 
-Selects a control with the specified style classes. Mutliple classes should be separated with a
+Selects a control with the specified style classes. Multiple classes should be separated with a
 `.` character, or a `:` character in the case of pseudoclasses. If multiple classes are specified
 then the control must have all of the requested classes present in order to match.
 
@@ -93,7 +93,7 @@ new Style(x => x.OfType<StackPanel>().Descendant().OfType<Button>());
 ```
 
 When two selectors are separated by a space, then the selector will match descendants in the
-logical truee, so in this case the selector will match any `Button` that is a logical descendant
+logical tree, so in this case the selector will match any `Button` that is a logical descendant
 of a `StackPanel`.
 
 ## PropertyEquals
