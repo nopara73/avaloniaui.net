@@ -1,7 +1,7 @@
 Title: Styles
 Order: 0
 ---
-Styles in avalonia are used to share property settings between controls. The Avalonia styling
+Styles in Avalonia are used to share property settings between controls. The Avalonia styling
 system can be thought of as a mix of CSS styling and WPF/UWP styling. At its most basic, a
 style consists of a _selector_ and a collection of _setters_. 
 
@@ -10,8 +10,8 @@ point and font weight to bold:
 
 ```xml
 <Style Selector="TextBlock.h1">
-    <Setter Property="FontSize" Vaue="24"/>
-    <Setter Property="FontWeight" Vaue="Bold"/>
+    <Setter Property="FontSize" Value="24"/>
+    <Setter Property="FontWeight" Value="Bold"/>
 </Style>
 ```
 
@@ -24,8 +24,8 @@ Styles can be defined on any control or on the `Application` object by adding th
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Window.Styles>
         <Style Selector="TextBlock.h1">
-            <Setter Property="FontSize" Vaue="24"/>
-            <Setter Property="FontWeight" Vaue="Bold"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Styles>
 
@@ -102,8 +102,8 @@ A style's setters describe what will happen when the selector matches a control.
 property/value pairs written in the format:
 
 ```xml
-<Setter Property="FontSize" Vaue="24"/>
-<Setter Property="Padding" Vaue="4 2 0 4"/>
+<Setter Property="FontSize" Value="24"/>
+<Setter Property="Padding" Value="4 2 0 4"/>
 ```
 
 Whenever a style is matched with a control, all of the setters will be applied to the control. 
@@ -113,30 +113,30 @@ previous value.
 ## Style Precedence
 
 If multiple styles match a control, and they both attempt to set the same property then the style
-_closest to the control_ will win. Consider the folowing example:
+_closest to the control_ will win. Consider the following example:
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Window.Styles>
         <Style Selector="TextBlock.h1">
-            <Setter Property="FontSize" Vaue="24"/>
-            <Setter Property="FontWeight" Vaue="Bold"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Styles>
 
     <StackPanel>
         <StackPanel.Styles>
             <Style Selector="TextBlock.h1">
-                <Setter Property="FontSize" Vaue="48"/>
-                <Setter Property="Foreground" Vaue="Red"/>
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="Foreground" Value="Red"/>
             </Style>
         </StackPanel.Styles>
 
         <TextBlock Classes="h1">
             <StackPanel.Styles>
                 <Style Selector="TextBlock.h1">
-                    <Setter Property="Foreground" Vaue="Blue"/>
+                    <Setter Property="Foreground" Value="Blue"/>
                 </Style>
             </StackPanel.Styles>
 
